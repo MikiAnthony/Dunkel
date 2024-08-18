@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e2355551ba3b114f8958eccacf64c5e, type: 2}
+  - {fileID: 2100000, guid: 822c4a457b9e976489e824a1e7201615, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -169,7 +169,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e2355551ba3b114f8958eccacf64c5e, type: 2}
+  - {fileID: 2100000, guid: 822c4a457b9e976489e824a1e7201615, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -276,7 +276,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e2355551ba3b114f8958eccacf64c5e, type: 2}
+  - {fileID: 2100000, guid: 822c4a457b9e976489e824a1e7201615, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -381,7 +381,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7867cba8925243f4ab10aef8051d4c04, type: 2}
+  - {fileID: 2100000, guid: 84fa8ac51e81e7443a130632a0fc26ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -435,7 +435,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9094972915532021939}
-  - component: {fileID: 2348556078507841429}
   - component: {fileID: 1695134148483157292}
   - component: {fileID: 5573331638411515771}
   - component: {fileID: -4103997148140900774}
@@ -466,237 +465,6 @@ Transform:
   - {fileID: 5636912566938060155}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2348556078507841429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3593517511067226478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff62c046a053f416a8dc48ad6483a25e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnStateRemote:
-    m_PersistentCalls:
-      m_Calls: []
-  OnInputRemote:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStateAuthority:
-    m_PersistentCalls:
-      m_Calls: []
-  OnInputAuthority:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAuthorityRequestRejected:
-    m_PersistentCalls:
-      m_Calls: []
-  OnConnectedEntityChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnInputSimulatorConnected:
-    m_PersistentCalls:
-      m_Calls: []
-  coherenceSyncConfig: {fileID: 2205380304190671392, guid: 5d3c605b1ea8f424fa91e890b3667183, type: 2}
-  archetype:
-    boundComponents:
-    - component: {fileID: 9094972915532021939}
-      lodStepsActive: 1
-    - component: {fileID: 1700675779074214276}
-      lodStepsActive: 1
-    - component: {fileID: 5716531914403219453}
-      lodStepsActive: 1
-    - component: {fileID: 6805327869825420167}
-      lodStepsActive: 1
-    - component: {fileID: 5992769935241929462}
-      lodStepsActive: 1
-    - component: {fileID: 4144368623139532634}
-      lodStepsActive: 1
-    - component: {fileID: 2671756599748882160}
-      lodStepsActive: 1
-    - component: {fileID: 7599912080671426255}
-      lodStepsActive: 1
-    - component: {fileID: 5644140734984012492}
-      lodStepsActive: 1
-    - component: {fileID: 8364613767941501195}
-      lodStepsActive: 1
-    - component: {fileID: 3766964178610129892}
-      lodStepsActive: 1
-    - component: {fileID: 1115520918588309072}
-      lodStepsActive: 1
-    - component: {fileID: 8661470572057653201}
-      lodStepsActive: 1
-    - component: {fileID: 5112275947806166155}
-      lodStepsActive: 1
-    - component: {fileID: 7871703248652636087}
-      lodStepsActive: 1
-    - component: {fileID: 6630011239156609479}
-      lodStepsActive: 1
-    - component: {fileID: 4339869844982740902}
-      lodStepsActive: 1
-    - component: {fileID: 5636912566938060155}
-      lodStepsActive: 1
-    - component: {fileID: 6204629122256369175}
-      lodStepsActive: 1
-    - component: {fileID: 3977883332293468368}
-      lodStepsActive: 1
-    - component: {fileID: 3454612947284465931}
-      lodStepsActive: 1
-    - component: {fileID: 5573331638411515771}
-      lodStepsActive: 1
-    - component: {fileID: -4103997148140900774}
-      lodStepsActive: 1
-    - component: {fileID: 1695134148483157292}
-      lodStepsActive: 1
-    lodLevels:
-    - distance: 0
-    archetypeName: Black32Marker32Pen_ca3564d20d4b962479c49bc7a70f76d8
-    GeneratesArchetypeDefinition: 0
-  interpolationLocation: 1
-  RigidbodyUpdateMode: 0
-  OnRigidbody2DPositionUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRigidbody3DPositionUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRigidbody2DRotationUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRigidbody3DRotationUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  bakedScriptType: Coherence.Generated.CoherenceSyncBlack32Marker32Pen_ca3564d20d4b962479c49bc7a70f76d8,
-    Assembly-CSharp
-  approveAuthorityTransferRequests: 0
-  simulationType: 0
-  authorityTransferType: 1
-  orphanedBehavior: 1
-  lifetimeType: 1
-  uniquenessType: 1
-  replacementStrategy: 0
-  unsyncedNetworkEntityPriority: 0
-  preserveChildren: 0
-  bindings:
-  - rid: 6658427202652864514
-  - rid: 6658427202652864517
-  onNetworkedInstantiation:
-    m_PersistentCalls:
-      m_Calls: []
-  onBeforeNetworkedInstantiation:
-    m_PersistentCalls:
-      m_Calls: []
-  onNetworkedDestruction:
-    m_PersistentCalls:
-      m_Calls: []
-  scenePrefabInstanceUUID: 
-  coherenceUUID: 
-  assetVersion: 
-  usingReflection: 0
-  coherenceTag: 
-  componentActions:
-  - rid: 6658427428487823367
-  floatingOriginMode: 0
-  floatingOriginParentedMode: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
-    - rid: 6658427202652864514
-      type: {class: BoolBinding, ns: Coherence.Toolkit.Bindings.ValueBindings, asm: Coherence.Toolkit}
-      data:
-        descriptor:
-          rid: 6658427202652864515
-        routing: 0
-        isPredicted: 0
-        defaultInterpolationPath: 
-        guid: 9e807799-a688-49ba-91df-ce7d6d5266dc
-        archetypeData:
-          type: 3
-          minRange: 0
-          maxRange: 0
-          sampleRate: 20
-          floatCompression: 0
-          fields:
-          - type: 3
-            bits: 1
-            precision: 0
-            floatCompression: 0
-        unityComponent: {fileID: 1695134148483157292}
-        coherenceSync: {fileID: 2348556078507841429}
-        interpolationSettings: {fileID: 0}
-    - rid: 6658427202652864515
-      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
-      data:
-        name: IsBeingUsed
-        monoAssemblyType: System.Boolean, mscorlib
-        required: 1
-        enforcesLODingWhenFieldsOverriden: 1
-        valueSyncCallbackName: 
-        memberType: 4
-        parameterAssemblyTypes: []
-        ownerType:
-          assemblyQualifiedName: Pen_Interaction, Assembly-CSharp, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        CustomData:
-          rid: -2
-        bindingType:
-          assemblyQualifiedName: Coherence.Toolkit.Bindings.ValueBindings.BoolBinding,
-            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        oldName: 
-        oldParameterAssemblyTypes: []
-    - rid: 6658427202652864517
-      type: {class: PositionBinding, ns: Coherence.Toolkit.Bindings.TransformBindings, asm: Coherence.Toolkit}
-      data:
-        descriptor:
-          rid: 6658427202652864518
-        routing: 0
-        isPredicted: 0
-        defaultInterpolationPath: 
-        guid: 4ab5fb22-97c3-4bdd-a47e-b966fbbba1f2
-        archetypeData:
-          type: 7
-          minRange: 0
-          maxRange: 0
-          sampleRate: 20
-          floatCompression: 0
-          fields:
-          - type: 7
-            bits: 32
-            precision: 0.001
-            floatCompression: 0
-        unityComponent: {fileID: 9094972915532021939}
-        coherenceSync: {fileID: 2348556078507841429}
-        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
-    - rid: 6658427202652864518
-      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
-      data:
-        name: position
-        monoAssemblyType: UnityEngine.Vector3, UnityEngine
-        required: 1
-        enforcesLODingWhenFieldsOverriden: 1
-        valueSyncCallbackName: 
-        memberType: 64
-        parameterAssemblyTypes: []
-        ownerType:
-          assemblyQualifiedName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        CustomData:
-          rid: -2
-        bindingType:
-          assemblyQualifiedName: Coherence.Toolkit.Bindings.TransformBindings.PositionBinding,
-            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        oldName: 
-        oldParameterAssemblyTypes: []
-    - rid: 6658427428487823367
-      type: {class: KinematicRigidbodyComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: -4103997148140900774}
-        setOnRemote: 1
-        resetOnAuthority: 0
 --- !u!114 &1695134148483157292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,9 +477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bdb3b573efc2df4aad35e03a3f68e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Blocked: 0
   _renderer: {fileID: 6805327869825420167}
-  _highlightColor: {r: 0, g: 1, b: 0, a: 1}
-  IsBeingUsed: 0
   Collider: {fileID: 5573331638411515771}
   _lookAtObject: 1
   _isInsideGuidingObject: 0
@@ -828,7 +595,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a836cf916ffc78c459af941ca1876394, type: 2}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
