@@ -5590,6 +5590,7 @@ MonoBehaviour:
     CursorIcon: {fileID: 2800000, guid: d4507ce57ca86194e956dbcb4322ff63, type: 3}
   - InteractionType: 4
     CursorIcon: {fileID: 2800000, guid: 375a2c2e60556634d809c05d7fe9211a, type: 3}
+  _defaultCursorDot: {fileID: 2800000, guid: 5e1c8ddbc9993fa44b1360e3c718ed72, type: 3}
   _playerCamera: {fileID: 768433709}
   _cursorText: {fileID: 2698705090202778170}
   _fullScreenInteractionCameraTransitionTime: 1

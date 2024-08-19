@@ -16,6 +16,7 @@ public class PlayerInteraction : MonoBehaviour
     
     [SerializeField] private float _interactionRange = 5f;
     [SerializeField] private InteractionIcons[] _interactionIcons;
+    [SerializeField] private Texture2D _defaultCursorDot;
     [SerializeField] private Camera _playerCamera = default;
     [SerializeField] private TextMeshProUGUI _cursorText;
 
@@ -83,7 +84,7 @@ public class PlayerInteraction : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         _interactAction = _playerInput.currentActionMap.FindAction("Interact", true);
         _useAction = _playerInput.currentActionMap.FindAction("Use", true);
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.SetCursor(_defaultCursorDot, Vector2.zero, CursorMode.ForceSoftware);
         _cursorText.text = "";
         for (var i = 0; i < _interactionIcons.Length; i++)
         {
@@ -113,7 +114,7 @@ public class PlayerInteraction : MonoBehaviour
                 _interactionTarget?.Deselect();
                 _interactionTarget = null;
                 _isHoldingInteractive = false;
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+                Cursor.SetCursor(_defaultCursorDot, Vector2.zero, CursorMode.ForceSoftware);
                 _cursorText.text = "";
             }
 
@@ -162,7 +163,7 @@ public class PlayerInteraction : MonoBehaviour
             if (_interactionTarget != null)
             {
                 _interactionTarget.Deselect();
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+                Cursor.SetCursor(_defaultCursorDot, Vector2.zero, CursorMode.ForceSoftware);
                 _cursorText.text = "";
             }
             _interactionTarget = null;
