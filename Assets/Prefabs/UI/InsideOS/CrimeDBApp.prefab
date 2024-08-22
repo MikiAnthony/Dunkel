@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5673927148454002009}
   - component: {fileID: 7768132472742572976}
   m_Layer: 0
-  m_Name: HeartMonitorApp
+  m_Name: CrimeDBApp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,6 +519,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: InsideOSButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6889266817367559468, guid: fef2556cb17b3bd4791adb778be308c8, type: 3}
+      propertyPath: m_text
+      value: SEARCH
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889266817367559468, guid: fef2556cb17b3bd4791adb778be308c8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6889266817367559468, guid: fef2556cb17b3bd4791adb778be308c8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 7579216310823889345, guid: fef2556cb17b3bd4791adb778be308c8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -619,10 +631,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2433008229261152917, guid: 6e3e57b1ed675514b837a1e64401fdb1, type: 3}
       propertyPath: m_text
-      value: 'Welcome to <color=blue>InsideOS</color>
+      value: 'Welcome to the <color=blue>Police Database</color>
 
-        The best in in-body
-        technology since ever.'
+        An archive
+        over old cases and ongoing investigations'
       objectReference: {fileID: 0}
     - target: {fileID: 2433008229261152917, guid: 6e3e57b1ed675514b837a1e64401fdb1, type: 3}
       propertyPath: m_fontSize
@@ -632,6 +644,10 @@ PrefabInstance:
       propertyPath: m_margin.y
       value: 0.15066755
       objectReference: {fileID: 0}
+    - target: {fileID: 2433008229261152917, guid: 6e3e57b1ed675514b837a1e64401fdb1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2433008229261152917, guid: 6e3e57b1ed675514b837a1e64401fdb1, type: 3}
       propertyPath: m_fontColor.b
       value: 0
@@ -648,6 +664,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 0.29
       objectReference: {fileID: 0}
+    - target: {fileID: 2433008229261152917, guid: 6e3e57b1ed675514b837a1e64401fdb1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2433008229261152917, guid: 6e3e57b1ed675514b837a1e64401fdb1, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
@@ -762,6 +782,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2924025454541436574}
     m_Modifications:
+    - target: {fileID: 2433008229261152917, guid: 6e3e57b1ed675514b837a1e64401fdb1, type: 3}
+      propertyPath: m_text
+      value: POLICE DATABASE
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433008229261152917, guid: 6e3e57b1ed675514b837a1e64401fdb1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 2433008229261152917, guid: 6e3e57b1ed675514b837a1e64401fdb1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 7570706015878363753, guid: 6e3e57b1ed675514b837a1e64401fdb1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
