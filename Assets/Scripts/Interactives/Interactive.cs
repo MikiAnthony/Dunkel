@@ -67,4 +67,10 @@ public class Interactive : MonoBehaviour
     {
 	    return _defaultInteractionType;
     }
+
+    public void Destroy()
+    {
+		_outline = null;
+        Destroy(gameObject);
+    }
 }

@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1010342161017880322}
   - component: {fileID: 5835453051380651202}
   - component: {fileID: 5946199813687605828}
-  - component: {fileID: 7434361160010618229}
+  - component: {fileID: 3062620793986294591}
   m_Layer: 6
   m_Name: Paper
   m_TagString: Untagged
@@ -218,7 +218,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7434361160010618229
+--- !u!114 &3062620793986294591
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,14 +227,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3559569595643263844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f438a5be5f7bf54caa1c4e3cd399c63, type: 3}
+  m_Script: {fileID: 11500000, guid: eeb99851e447a664da0c88f991b7ec78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Blocked: 0
-  _renderer: {fileID: 1010342161017880322}
-  Collider: {fileID: 5835453051380651202}
-  _lookAtObject: 1
-  _isInsideGuidingObject: 0
-  _grabbedObjectOffset: {x: 0, y: 0, z: 0.6}
-  _guidingObjects: []
-  _guidingObjectCollidedWith: {fileID: 0}
+  _renderer: {fileID: 1066795244922154509}
+  image: {fileID: 21300000, guid: 5104c2490d1c44b47ab0e683f6337b50, type: 3}

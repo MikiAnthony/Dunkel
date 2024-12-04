@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static PlayerInteraction;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private Texture2D _defaultCursorDot;
     [SerializeField] private Camera _playerCamera = default;
     [SerializeField] private TextMeshProUGUI _cursorText;
+
+    [SerializeField] private GameObject _inspectViewUI;
+    [SerializeField] private Image _inspectViewUIImage;
 
     [SerializeField] private float _fullScreenInteractionCameraTransitionTime = 1f;
     
@@ -40,6 +44,7 @@ public class PlayerInteraction : MonoBehaviour
     private readonly Dictionary<Interactive.InteractionType, Texture2D> _interactionCursorIcons = new();
     public GameObject _whiteboard = null;
     private FirstPersonController _firstPersonController = null;
+    private StarterAssetsInputs _starterAssestInputs;
     
    //Interaction stuff
     public enum MouseAction
@@ -79,6 +84,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (!enabled) return; //I am not auth of this player
         _firstPersonController = GetComponent<FirstPersonController>();
+        _starterAssestInputs = GetComponent<StarterAssetsInputs>();
         _playerCameraOrgRotation = _playerCamera.transform.localEulerAngles;
         _playerCameraOrgPosition = _playerCamera.transform.localPosition;
         _playerInput = GetComponent<PlayerInput>();
@@ -105,7 +111,7 @@ public class PlayerInteraction : MonoBehaviour
             }
             return;
         }
-        
+
         if (!_grabbingThings && _isHoldingInteractive)
         {
             if (_interactAction.WasReleasedThisFrame())
@@ -180,6 +186,11 @@ public class PlayerInteraction : MonoBehaviour
                 _grabbedInteractive = grabbableInteractive;
                 _grabbedRotation = Quaternion.Inverse(transform.rotation) * _grabbedInteractive.transform.rotation;
                 _grabbedObjectOffset = grabbableInteractive._grabbedObjectOffset;
+            }
+
+            if (_interactionTarget is InspectableImage_Interactive inspectableImage)
+            {
+
             }
         }
     }
@@ -330,6 +341,22 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
     }
+    public void InspectImageInteraction(Sprite image, Action<PlayerInteraction> abortAction)
+    {
+        PlayerLocked = true;
+        _starterAssestInputs.SetCursorState(false);
+        _inspectViewUIImage.sprite = image;
+        _inspectViewUI.SetActive(true);
+        _abortAction = abortAction;
+    }
+
+    public void EndInspectImageInteraction()
+    {
+        PlayerLocked = false;
+        _starterAssestInputs.SetCursorState(true);
+        _isHoldingInteractive = false;
+        _inspectViewUI.SetActive(false);
+    }
 
     public void StartFullScreenInteraction(Vector3 cameraPosition, Vector3 cameraRotation, Action<Vector2> mouseUpdate, Action<MouseAction> mouseClick, Action<PlayerInteraction> abortAction)
     {
@@ -359,6 +386,11 @@ public class PlayerInteraction : MonoBehaviour
         });
         LeanTween.rotateLocal(_playerCamera.gameObject, _playerCameraOrgRotation, _fullScreenInteractionCameraTransitionTime);
         return true;
+    }
+
+    public void SetInputCursorState(bool state)
+    {
+        _starterAssestInputs.SetCursorState(state);
     }
 
 }
