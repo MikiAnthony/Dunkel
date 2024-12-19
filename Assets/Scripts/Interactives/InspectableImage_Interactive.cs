@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class InspectableImage_Interactive : Interactive
 {
-    public Sprite image;
+    public Sprite _image;
+    public GameObject _inventoryItem;
+    public bool _collectable;
     protected override void Awake()
     {
         base.Awake();
@@ -16,7 +18,11 @@ public class InspectableImage_Interactive : Interactive
     public override async UniTask<bool> Use(Vector3 interactionHitWorldPos, PlayerInteraction playerInteraction)
     {
         OnUsed?.Invoke(this, playerInteraction);
-        playerInteraction.InspectImageInteraction(image, PlayerAbortInteraction);
+        playerInteraction.InspectImageInteraction(_image, PlayerAbortInteraction);
+        if (_collectable)
+        {
+            playerInteraction.CollectItem(gameObject, _inventoryItem);
+        }
         return true;
     }
 

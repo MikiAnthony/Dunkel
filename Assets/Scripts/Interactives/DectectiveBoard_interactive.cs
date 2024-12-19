@@ -20,6 +20,7 @@ public class DectectiveBoard_Interactive : Interactive
     public override async UniTask<bool> Use(Vector3 interactionHitWorldPos, PlayerInteraction playerInteraction)
     {
         playerInteraction.StartFullScreenInteraction(_cameraTarget.position, _cameraTarget.eulerAngles, null, _dectectiveBoard.MouseActionUpdate, PlayerAbortInteraction);
+        playerInteraction.ShowBoardUI(true);
         playerInteraction.SetInputCursorState(false);
         return true;
     }
@@ -27,6 +28,7 @@ public class DectectiveBoard_Interactive : Interactive
     public void PlayerAbortInteraction(PlayerInteraction playerInteraction)
     {
         playerInteraction.EndFullScreenInteraction();
+        playerInteraction.ShowBoardUI(false);
         playerInteraction.SetInputCursorState(true);
     }
 }

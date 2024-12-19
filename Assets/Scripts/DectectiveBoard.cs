@@ -12,6 +12,7 @@ using UnityEngine.UI;
 public class DectectiveBoard : MonoBehaviour
 {
     [SerializeField] private Transform _cameraTarget;
+    [SerializeField] private BoardView _boardView;
     public Camera _camera;
     private DectectiveBoardItem _currentSelectedObject;
     private Vector3 _currentSelectionOffset = Vector3.zero;
@@ -46,6 +47,11 @@ public class DectectiveBoard : MonoBehaviour
                     _currentSelectedObject.transform.position = Camera.main.ScreenToWorldPoint(currentMousePosition) + _currentSelectionOffset;
                 }
                 break;
+            case PlayerInteraction.MouseAction.RightClick:
+                _currentSelectedObject = RayCastMouseClick();
+                if (_currentSelectedObject != null)
+                    RemoveItem();
+                break;
         }
     }
 
@@ -53,7 +59,7 @@ public class DectectiveBoard : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit[] hits;
-        hits = Physics.RaycastAll(ray, 100, 1 << 8);
+        hits = Physics.RaycastAll(ray, 100, LayerMask.GetMask("DectectiveBoardObject"));
 
         DectectiveBoardItem ClosestItem = null;
 
@@ -72,7 +78,6 @@ public class DectectiveBoard : MonoBehaviour
                 currentMousePosition.z = _cameraTarget.localPosition.z - highestZPos;
                 Vector3 clickPos = Camera.main.ScreenToWorldPoint(currentMousePosition);
                 _currentSelectionOffset = item.transform.position - clickPos;
-                Debug.Log(_currentSelectionOffset);
             }
         }
 
@@ -83,8 +88,32 @@ public class DectectiveBoard : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit[] hits;
-        hits = Physics.RaycastAll(ray, 100, 1 << 8);
+        hits = Physics.RaycastAll(ray, 100, LayerMask.GetMask("DectectiveBoardObject"));
 
         return hits.Length;
+    }
+
+    public void AddNewItem(GameObject item, GameObject inventoryItem)
+    {
+        var currentMousePosition = Input.mousePosition;
+        currentMousePosition.z = _cameraTarget.localPosition.z - 0.1f;
+
+        GameObject newItem = Instantiate(item, Vector3.zero, item.transform.rotation, transform);
+        newItem.transform.position = Camera.main.ScreenToWorldPoint(currentMousePosition);
+        newItem.transform.localEulerAngles = new Vector3(0,0,0);
+
+        _currentSelectedObject = newItem.GetComponent<DectectiveBoardItem>();
+        _currentSelectedObject._inventoryItemRef = inventoryItem;
+        _currentSelectedObject.OnMovingItem();
+    }
+
+    public void RemoveItem()
+    {
+        if (_currentSelectedObject._isStickyNote)
+            return;
+
+        PlayerInventory.Instance.AddItemToInventory(_currentSelectedObject._inventoryItemRef);
+        Destroy(_currentSelectedObject.gameObject);
+        _currentSelectedObject = null;
     }
 }

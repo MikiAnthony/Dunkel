@@ -22,6 +22,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _cursorText;
 
     [SerializeField] private GameObject _inspectViewUI;
+    [SerializeField] private GameObject _boardViewUI;
     [SerializeField] private Image _inspectViewUIImage;
 
     [SerializeField] private float _fullScreenInteractionCameraTransitionTime = 1f;
@@ -32,6 +33,7 @@ public class PlayerInteraction : MonoBehaviour
     private Int32 _interactionId = 0;
     private InputAction _interactAction = null;
     private InputAction _useAction = null;
+    private InputAction _altUseAction = null;
     private InputAction _lookAction = null;
     private InputAction _mouseAction = null;
     private Int32 _guid = 0;
@@ -51,7 +53,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         Pressed,
         Released,
-        Drag
+        Drag,
+        RightClick,
     };
 
     private bool _playerLocked = false;
@@ -90,6 +93,7 @@ public class PlayerInteraction : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         _interactAction = _playerInput.currentActionMap.FindAction("Interact", true);
         _useAction = _playerInput.currentActionMap.FindAction("Use", true);
+        _altUseAction = _playerInput.currentActionMap.FindAction("AltUse", true);
         Cursor.SetCursor(_defaultCursorDot, Vector2.zero, CursorMode.ForceSoftware);
         _cursorText.text = "";
         for (var i = 0; i < _interactionIcons.Length; i++)
@@ -219,6 +223,11 @@ public class PlayerInteraction : MonoBehaviour
                     _mouseActionSubscription.Invoke(MouseAction.Drag);
                 else if (_useAction.WasReleasedThisFrame())
                     _mouseActionSubscription.Invoke(MouseAction.Released);
+
+                if(_altUseAction.WasPressedThisFrame())
+                {
+                    _mouseActionSubscription.Invoke(MouseAction.RightClick);
+                }
             }
             return;
         }
@@ -341,6 +350,13 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
     }
+
+    public void CollectItem(GameObject item, GameObject inventoryItem)
+    {
+        PlayerInventory.Instance.AddItemToInventory(inventoryItem);
+        Destroy(item, 0.2f);
+    }
+
     public void InspectImageInteraction(Sprite image, Action<PlayerInteraction> abortAction)
     {
         PlayerLocked = true;
@@ -391,6 +407,18 @@ public class PlayerInteraction : MonoBehaviour
     public void SetInputCursorState(bool state)
     {
         _starterAssestInputs.SetCursorState(state);
+    }
+
+    public void ShowBoardUI(bool show)
+    {
+        _boardViewUI.SetActive(show);
+    }
+
+    public void EndBoardInteraction()
+    {
+        _starterAssestInputs.SetCursorState(true);
+        EndFullScreenInteraction();
+        ShowBoardUI(false);
     }
 
 }

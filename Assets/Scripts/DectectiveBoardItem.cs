@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class DectectiveBoardItem : MonoBehaviour
 {
-    [SerializeField] GameObject pin;
-    [SerializeField] public bool isStickyNote; 
+    [SerializeField] GameObject _pin;
+    [SerializeField] public bool _isStickyNote;
+
+    public GameObject _inventoryItemRef;
     public void OnMovingItem()
     {
-        if(!isStickyNote && pin != null)
-            pin.SetActive(false);
+        if(!_isStickyNote && _pin != null)
+            _pin.SetActive(false);
     }
 
     public void OnPlacingItem()
     {
-        if (!isStickyNote && pin != null)
-            pin.SetActive(true);
+        if (!_isStickyNote && _pin != null)
+            _pin.SetActive(true);
     }
 }
